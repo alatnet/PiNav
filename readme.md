@@ -9,7 +9,26 @@ There are two ways to install:
 Recomended MicroSD Card Size: 2GB
 
 ### Flashable
-Follow the same instructions as you would flash a normal Raspbian image.
+Follow the same instructions as you would flash a normal Raspbian image.  
+1. IMPORTANT: Set your password.  I cannot stress this enough so that your Pi doesnt become a vector of attack on your computer.
+2. To pair a PS Nav Controller:
+* Connect a nav controller to the Pi via usb.  
+> sudo navpair  
+
+* Disconnect nav controller.  
+
+>sudo bluetoothctl  
+[bluetooth]# discoverable on  
+[bluetooth]# agent on  
+[bluetooth]# default-agent  
+
+* Press PS button on nav controller.  
+> [bluetooth]# connect \<psnav mac\>  
+[bluetooth]# trust \<psnav mac\>  
+[bluetooth]# quit  
+
+3. Disconnect the Raspberry Pi Zero W from the monitor and keyboard and connect it to a computer via usb cable.
+4. Once it has installed all drivers, press the PS button on the PS Nav controller, you can verify that it is working via the game controller settings.
 
 ### Script
 Current Distro as of time of writing: [Stretch](https://www.raspberrypi.org/downloads/raspbian/)  
