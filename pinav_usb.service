@@ -1,0 +1,12 @@
+[Unit]
+Description=PiNav USB Gadget
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/usr/bin
+ExecStart=/usr/bin/pinav_usb
+ExecStop=/usr/bin/pinav_usb stop
+
+[Install]
+WantedBy=multi-user.target
