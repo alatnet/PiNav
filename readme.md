@@ -27,12 +27,12 @@ echo "libcomposite" | sudo tee -a /etc/modules
 > sudo chmod +x ./install_pinav.sh  
 sudo ./install_pinav.sh  
 
-~if this does not work, you can open up the install_pinav.sh file with nano or cat and execute anything that doesnt have a # symbol manually.~  
+*if this does not work, you can open up the install_pinav.sh file with nano or cat and execute anything that doesnt have a # symbol manually.*  
 8. Reboot your device by unplugging and replugging the Pi.  
-~if you want tssh over the serial connection, type this:~
+*if you want tssh over the serial connection, type this:**
 > sudo systemctl enable getty@ttyGS0.service  
 
-~Note that the connection on a computer is via a com port and the baud rate is 115200.~
+*Note that the connection on a computer is via a com port and the baud rate is 115200.**
 
 9. To pair a PS Nav Controller:
 * Connect a nav controller to the Pi via usb.  
