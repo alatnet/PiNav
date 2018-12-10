@@ -29,7 +29,7 @@ sudo ./install_pinav.sh
 
 *if this does not work, you can open up the install_pinav.sh file with nano or cat and execute anything that doesnt have a # symbol manually.*  
 8. Reboot your device by unplugging and replugging the Pi.  
-*if you want tssh over the serial connection, type this:**
+*if you want ssh over the serial connection, type this:**
 > sudo systemctl enable getty@ttyGS0.service  
 
 *Note that the connection on a computer is via a com port and the baud rate is 115200.**
