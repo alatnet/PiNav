@@ -17,9 +17,10 @@ Current Distro as of time of writing: [Stretch](https://www.raspberrypi.org/down
 2. While microsd card is still on the computer, open up the boot partition and extract the zip file to the root of it or create a pinav folder and download the github files.
 3. Remove the microsd card from the computer and insert it into the Raspberry Pi Zero W. (Note, have your pi connected to a monitor with a keyboard, we will not be connecting to the computer at this time)
 4. Power on the Raspberry Pi Zero W and wait until you get a prompt.
+  * Note, you may need to set your keyboard locale.
 5. IMPORTANT: Set your password.  I cannot stress this enough so that your Pi doesnt become a vector of attack on your computer.
 6. Type in the following:
-> echo "dtoverlay=dwc2" > sudo tee -a /boot/config.txt  
+> echo "dtoverlay=dwc2" | sudo tee -a /boot/config.txt  
 echo "dwc2" | sudo tee -a /etc/modules  
 echo "libcomposite" | sudo tee -a /etc/modules  
 
