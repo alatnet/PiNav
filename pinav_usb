@@ -7,33 +7,33 @@ if [ ! -d /sys/kernel/config/usb_gadget ]; then
     modprobe libcomposite
 fi
 
-if [[ $1 == "stop" ]]; then
-    cd /sys/kernel/config/usb_gadget/g1
+#if [[ "$1" == "stop" ]]; then
+#    cd /sys/kernel/config/usb_gadget/g1
 
-    echo "" > UDC #disable gadget
+#    echo "" > UDC #disable gadget
 
     #remove functions from configurations
-    rm configs/c.1/hid.js0
-    rm configs/c.1/hid.js1
-    rm configs/acm.usb0
-    rm configs/rndis.usb0
+#    rm configs/c.1/hid.js0
+#    rm configs/c.1/hid.js1
+#    rm configs/acm.usb0
+#    rm configs/rndis.usb0
 
-    rmdir configs/c.1/strings/0x409 #remove strings directories in configurations
-    rmdir configs/c.1 #remove the configurations
+#    rmdir configs/c.1/strings/0x409 #remove strings directories in configurations
+#    rmdir configs/c.1 #remove the configurations
 
     #remove functions
-    rm functions/hid.js0
-    rm functions/hid.js1
-    rm functions/acm.usb0
-    rm functions/rndis.usb0
+#    rm functions/hid.js0
+#    rm functions/hid.js1
+#    rm functions/acm.usb0
+#    rm functions/rndis.usb0
 
-    rmdir strings/0x409 #remove strings directories
+#    rmdir strings/0x409 #remove strings directories
 
-    cd ..
-    rmdir g1 #remove the gadget
+#    cd ..
+#    rmdir g1 #remove the gadget
 
-    exit 0
-fi
+#    exit 0
+#fi
 
 if [ -d /sys/kernel/config/usb_gadget/g1 ]; then
     exit 0
