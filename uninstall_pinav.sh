@@ -9,8 +9,8 @@ rm /etc/systemd/system/pinav_usb.service
 rm /usr/bin/pinav_usb
 
 #remove the bridge daemon
-rm /boot/pinav/99-pinav_bridge_daemon.rules /etc/udev/rules.d
-rm /boot/pinav/pinav_bridge_daemon@.service /etc/systemd/system
+rm /boot/pinav/99-pinav_bridge_daemon.rules
+rm /boot/pinav/pinav_bridge_daemon@.service
 rm /usr/bin/pinav_bridge_daemon
 
 #remove the navpair program

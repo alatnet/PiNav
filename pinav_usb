@@ -55,7 +55,7 @@ cd g1
 echo "0x0200" > bcdUSB
 echo "0x02" > bDeviceClass
 echo "0x00" > bDeviceSubClass
-echo "0x3066" > bcdDevice
+echo "0x0001" > bcdDevice
 echo $ID_VENDOR > idVendor
 echo $ID_PRODUCT > idProduct
 
@@ -74,7 +74,7 @@ echo "PiNav" > strings/0x409/product
 
 mkdir configs/c.1
 mkdir configs/c.1/strings/0x409
-echo "CDC 2xACM+RNDIS" > configs/c.1/strings/0x409/configuration
+echo "CDC ACM+RNDIS+2xHID" > configs/c.1/strings/0x409/configuration
 
 mkdir functions/acm.usb0
 mkdir functions/rndis.usb0 # Flippin' Windows
