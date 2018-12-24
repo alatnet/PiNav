@@ -57,12 +57,12 @@ echo "libcomposite" | sudo tee -a /etc/modules
 7. Reboot the Pi Zero W.
 8. Go into the bin folder within the pinav folder on the boot partition.
 9. Type in the following:
-> sudo chmod +x ./enableNet.sh
-sudo ./enableNet.sh
+> sudo chmod +x ./enableNet.sh  
+sudo ./enableNet.sh  
 
 10. Share your internet connection with the Pi Zero W via the new RNDIS connection.
 11. Type in the following when you verified that the Pi Zero W has a network connection:
-> sudo apt-get install libconfig9
+> sudo apt-get install libconfig9  
 
 12. Afterwards, type in the following:
 > sudo chmod +x ./install_pinav.sh  
