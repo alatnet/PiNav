@@ -1,1 +1,0 @@
-KERNEL=="js[0-9]*", SUBSYSTEM=="input", ACTION=="add", PROGRAM="/bin/systemd-escape -p --template=pinav_bridge_daemon@.service $env{DEVNAME}", TAG+="systemd", ENV{SYSTEMD_WANTS}+="%c"
