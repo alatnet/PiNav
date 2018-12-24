@@ -8,18 +8,32 @@
 #enable console on serial
 #systemctl enable getty@ttyGS0.service
 
-#copy and enable the pinav usb gadget service
-cp /boot/pinav/pinav_usb /usr/bin/pinav_usb
-chmod +x /usr/bin/pinav_usb
-cp /boot/pinav/pinav_usb.service /etc/systemd/system/pinav_usb.service
-systemctl enable pinav_usb
+#copy libusbgx libraries
+cp libusbgx/libusbgx.a /usr/local/lib
+cp libusbgx/libusbgx.la /usr/local/lib
+cp libusbgx/libusbgx.lai /usr/local/lib
+cp libusbgx/libusbgx.so /usr/local/lib
+cp libusbgx/libusbgx.so.2 /usr/local/lib
+cp libusbgx/libusbgx.so.2.0.0 /usr/local/lib
+ldconfig
 
-#copy the bridge daemon
-cp /boot/pinav/99-pinav_bridge_daemon.rules /etc/udev/rules.d
-cp /boot/pinav/pinav_bridge_daemon@.service /etc/systemd/system
-cp /boot/pinav/pinav_bridge_daemon /usr/bin
+#copy executables
+cp bin/navpair /usr/bin
+cp bin/sixpair /usr/bin
+cp bin/pinav_usb /usr/bin
+cp bin/pinav_bridge_daemon /usr/bin
+
+#make the executables... well... executable
+chmod +x /usr/bin/navpair
+chmod +x /usr/bin/sixpair
+chmod +x /usr/bin/pinav_usb
 chmod +x /usr/bin/pinav_bridge_daemon
 
-#copy the navpair program
-cp /boot/pinav/navpair /usr/bin
-chmod +x /usr/bin/navpair
+#copy misc files
+cp misc/pinav.ini /boot
+cp misc/pinav_usb.service /etc/systemd/system
+cp misc/pinav_bridge_daemon@.service /etc/systemd/system
+cp misc/99-pinav_bridge_daemon.rules /etc/udev/rules.d
+
+#enable pinav service
+systemctl enable pinav_usb
