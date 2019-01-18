@@ -1,0 +1,6 @@
+[submodule "libusbgx"]
+	path = submodules/libusbgx
+	url = https://github.com/libusbgx/libusbgx.git
+[submodule "inih"]
+	path = submodules/inih
+	url = https://github.com/benhoyt/inih.git
