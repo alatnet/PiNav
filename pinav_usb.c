@@ -298,9 +298,11 @@ uint64_t getSerial(void) {
 }
 
 bool checkError(int err, char* str) {
-	if (err != USBG_SUCCESS && DEBUG) {
-		fprintf(stderr, str);
-		fprintf(stderr, "Error: %s : %s\n", usbg_error_name(err), usbg_strerror(err));
+	if (err != USBG_SUCCESS) {
+		if (DEBUG){
+			fprintf(stderr, str);
+			fprintf(stderr, "Error: %s : %s\n", usbg_error_name(err), usbg_strerror(err));
+		}
 		return true;
 	}
 	return false;
